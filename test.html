@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Header on Scroll Down</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header styles */
+        .pressing {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transform: translateY(-100%); /* Ẩn header mặc định */
+            transition: transform 0.3s ease; /* Hiệu ứng mượt mà */
+        }
+
+        .header.visible {
+            transform: translateY(0); /* Hiện header khi cuộn xuống */
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header .nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .header .nav a.new {
+            background-color: #28a745;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .header .nav a.hot {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 15px;
+        }
+
+        .header .icons a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* Banner styles */
+        .banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 400px;
+            background-color: #f5f5f5;
+            position: relative; /* Đảm bảo banner không bị ảnh hưởng bởi header */
+        }
+
+        .banner .text-container {
+            margin-left: 50px;
+        }
+
+        .banner .text-container h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .banner .text-container a {
+            font-size: 18px;
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+        }
+
+        .banner img {
+            height: 100%;
+        }
+
+        /* Nội dung giả để có thể cuộn */
+        .content {
+            height: 1500px;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">unsen</div>
+            <nav class="nav">
+                <a href="#">DEMO</a>
+                <a href="#" class="new">FEATURES</a>
+                <a href="#" class="hot">SHOP</a>
+                <a href="#">PRODUCTS</a>
+                <a href="#">BLOG</a>
+                <a href="#">LOOKBOOK</a>
+                <a href="#">PAGES</a>
+                <a href="#">BUY THEME</a>
+            </nav>
+            <div class="icons">
+                <a href="#">🔍</a>
+                <a href="#">👤</a>
+                <a href="#">❤️ 0</a>
+                <a href="#">🛒 0</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+        <div class="text-container">
+            <h1>Mini Collection</h1>
+            <a href="#">Shop Collection</a>
+        </div>
+        <img src="path-to-image.jpg" alt="Banner Image">
+    </div>
+
+    <!-- Nội dung để cuộn -->
+    <div class="content">
+        <p>Scroll down to see the header appear, and scroll up to keep it hidden.</p>
+    </div>
+
+    <script>
+        // JavaScript để xử lý ẩn/hiện header
+        let lastScrollTop = 0;
+        const header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScrollTop > lastScrollTop && currentScrollTop > 50) {
+                // Cuộn xuống và cuộn quá 50px: hiện header
+                header.classList.add('visible');
+            } else {
+                // Cuộn lên hoặc chưa cuộn đủ: ẩn header
+                header.classList.remove('visible');
+            }
+            lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Đảm bảo không âm
+        });
+    </script>
+</body>
+</html>
