@@ -157,6 +157,7 @@ a {
     text-transform: none;
     font-weight: 500;
     font-size: 12px;
+    transition: all .2s;
 }
 
 .nav_ul_link span {
@@ -569,4 +570,114 @@ a {
 }
 .flickity-button:hover svg {
     fill: #ffffff;
+}
+footer {
+    background-color: #fff;
+    padding-top: 48px;
+}
+.footer-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+}
+.payment-icon {
+    width: 32px;
+    height: 32px;
+    margin-left: 0.5rem;
+}
+.footer-link {
+    color: #868686;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all .2s;
+}
+.footer-link:hover {
+    color: #000;
+}
+.newsletter-input {
+    display: flex;
+    align-items: center;
+}
+.newsletter-input input {
+    font-size: 12px;
+    padding: 10px 20px;
+    min-width: 248px;
+    line-height: 25px;
+    background-color: #f1f1f1;
+    color: #868686;
+    border: none;
+    outline: none;
+}
+.ft-social-icons a svg {
+    fill: rgb(203 32 39);
+    width: 16px;
+    height: 16px;
+}
+.ft-social-icons::before {
+    content: '';
+    display: none;
+}
+.col h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #222222;
+    margin-bottom: 24px;
+}
+.btn-new-letter-submit {
+    background-color: #000000;
+    color: #ffffff;
+    min-width: 77px;
+    line-height: 24px;
+    border: none;
+    border-radius: 5px;
+    padding: 11px 30px;
+    font-size: 10px;
+    transition: all .2s;
+}
+.btn-new-letter-submit:hover {
+    opacity: 50%;
+}
+.plane-svg {
+    fill: #ffffff;
+    width: 22px;
+    height: 23px;
+}
+.footer-bottom-row {
+    height: 61px;
+    display: flex;
+    align-items: center;
+}
+.footer-bottom-col {
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.footer-bottom-col ul li {
+    position: relative;
+}
+.footer-bottom-col ul li a {
+    color: #000000; 
+}
+.footer-bottom-col ul li:not(:last-child) {
+    margin-inline-end: 15px;
+}
+.footer-bottom-col ul li:not(:last-child):after {
+    width: 1px;
+    height: 18px;
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    border-inline-end: solid 1px #e6e6e6;
+    margin: auto;
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
